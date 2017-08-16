@@ -1,0 +1,13 @@
+#todo
+planet_edict = {
+    name = "idrinthplanetarywarfare_antispacebatteries"
+    influence_cost = 100
+    length = -1
+    effect = {
+        effect_idrinthplanetarywarfare_antispacebatteries
+    }
+    prerequisites = { }
+    ai_weight = {
+        weight = 95
+    }    
+}
