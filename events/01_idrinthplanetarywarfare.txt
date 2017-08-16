@@ -1,0 +1,127 @@
+namespace idrinthplanetarywarfare
+
+planet_event = {
+	id = idrinthplanetarywarfare.1
+	hide_window = yes
+
+	trigger = {
+		owner {
+			is_at_war = yes
+		}
+		fortification_health > 0
+		has_ground_combat = no
+	}
+	immediate = {
+		every_owned_pop = {
+			if = {
+				limit = {
+					planet = {
+						has_building = building_planetary_shield_generator
+					}
+				}
+				planet = {
+					reduce_fortification_health = -5
+				}
+			}
+			every_ship_in_system = {
+				if = {
+					limit = {
+						owner = {
+							is_at_war_with = root.controller
+						}
+						distance = {
+							source = root
+							max_distance = 100
+							min_distance = 0
+						}
+					}
+					random_list = {
+						3 = {
+							ship_event = { id = idrinthplanetarywarfare.2 }
+						}
+						3 = {
+							if = {
+								limit = {
+									root.controller = {
+										is_same_empire = root.owner
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						1 = {
+							if = {
+								limit = {
+									is_damaged = yes
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						3 = {
+							if = {
+								limit = {
+									root = {
+										has_building = building_planetary_shield_generator
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						3 = {
+							if = {
+								limit = {
+									root = {
+										has_planet_edict = edict_planetarydefences #todo
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						2 = {
+							if = {
+								limit = {
+									root = {
+										has_country_edict = edict_planetarydefence_training #todo
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						4 = {
+							if = {
+								limit = {
+									root = {
+										has_planet_modifier = pm_fortified_world #todo
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						1 = {
+							if = {
+								limit = {
+									root = {
+										has_spaceport = yes
+									}
+								}
+								ship_event = { id = idrinthplanetarywarfare.2 }
+							}
+						}
+						980 = {}
+					}
+				}
+			}
+		}
+	}
+}
+ship_event = {
+	id = idrinthplanetarywarfare.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		reduce_hp = {
+			min = 1
+			max = 100
+		}
+	}
+}
