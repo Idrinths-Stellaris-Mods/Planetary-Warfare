@@ -1,0 +1,33 @@
+# Preparation
+effect_idrinthplanetarywarfare_antispacebatteries = { # damages fleets within medium range
+  planet_resource_energy_add = -1
+}
+effect_idrinthplanetarywarfare_planetaryminefields = { # damages fleets within short range
+  planet_resource_minerals_add = -1
+}
+effect_idrinthplanetarywarfare_mobileshieldgenerators = { # additional defences
+  planet_resource_energy_add = -1
+  planet_fortification_strength = 0.5
+  garrison_health = 0.25
+}
+effect_idrinthplanetarywarfare_trainedgarrison = { # additional training
+  planet_resource_minerals_add = -1
+  garrison_health = 0.25
+  army_defense_morale_mult = 0.2
+  army_defense_damage_mult = 0.2
+  pop_ethic_militarist_attraction = 0.1
+}
+# During
+effect_idrinthplanetarywarfare_occupied = {
+  army_upkeep_mult = 0.25
+  garrison_health = -0.25
+}
+# After
+effect_idrinthplanetarywarfare_conquered = {
+  army_upkeep_mult = 0.1
+  garrison_health = -0.1
+  pop_growth_speed = -0.05
+  planet_fortification_strength = -0.15
+  building_time_mult = 0.05
+  edict_influence_cost = 0.1
+}
