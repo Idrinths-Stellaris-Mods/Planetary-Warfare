@@ -1,13 +1,68 @@
-#todo
 planet_edict = {
     name = "idrinthplanetarywarfare_antispacebatteries"
     influence_cost = 100
-    length = -1
+    length = 0
     effect = {
         effect_idrinthplanetarywarfare_antispacebatteries
     }
+    potential = {
+       NOT = {
+           has_modifier = effect_idrinthplanetarywarfare_antispacebatteries
+       }
+   }
     prerequisites = { }
     ai_weight = {
-        weight = 95
+        weight = 1
+    }    
+}
+planet_edict = {
+    name = "idrinthplanetarywarfare_planetaryminefields"
+    influence_cost = 100
+    length = 0
+    effect = {
+        effect_idrinthplanetarywarfare_planetaryminefields
+    }
+    potential = {
+       NOT = {
+           has_modifier = effect_idrinthplanetarywarfare_planetaryminefields
+       }
+   }
+    prerequisites = { }
+    ai_weight = {
+        weight = 1
+    }    
+}
+planet_edict = {
+    name = "idrinthplanetarywarfare_mobileshieldgenerators"
+    influence_cost = 100
+    length = 0
+    effect = {
+        effect_idrinthplanetarywarfare_mobileshieldgenerators
+    }
+    potential = {
+       NOT = {
+           has_modifier = effect_idrinthplanetarywarfare_mobileshieldgenerators
+       }
+   }
+    prerequisites = { }
+    ai_weight = {
+        weight = 1
+    }    
+}
+planet_edict = {
+    name = "idrinthplanetarywarfare_trainedgarrison"
+    influence_cost = 100
+    length = 0
+    effect = {
+        effect_idrinthplanetarywarfare_trainedgarrison
+    }
+    potential = {
+       NOT = {
+           has_modifier = effect_idrinthplanetarywarfare_trainedgarrison
+       }
+   }
+    prerequisites = { }
+    ai_weight = {
+        weight = 1
     }    
 }
